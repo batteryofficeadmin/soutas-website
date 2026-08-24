@@ -73,8 +73,8 @@
     JOIN Supplier    s ON p.supplier_name = s.name
     LEFT JOIN Manufacture m ON m.supplier_name = s.name`;
 
-  const sqlExact    = `SELECT ${selectCols} WHERE LOWER(s.name) = LOWER(?) AND LOWER(b.name) = LOWER(?) AND LOWER(REPLACE(p.code, ' ', '')) = LOWER(?)`;
-  const sqlFallback = `SELECT ${selectCols} WHERE LOWER(s.name) = LOWER(?) AND LOWER(REPLACE(p.code, ' ', '')) = LOWER(?) LIMIT 1`;
+  const sqlExact    = `SELECT ${selectCols} WHERE LOWER(s.name) = LOWER(?) AND LOWER(b.name) = LOWER(?) AND LOWER(REPLACE(p.code, ' ', '')) = LOWER(REPLACE(?, ' ', ''))`;
+  const sqlFallback = `SELECT ${selectCols} WHERE LOWER(s.name) = LOWER(?) AND LOWER(REPLACE(p.code, ' ', '')) = LOWER(REPLACE(?, ' ', '')) LIMIT 1`;
 
   function runQuery(sql, params) {
     const stmt = db.prepare(sql);
