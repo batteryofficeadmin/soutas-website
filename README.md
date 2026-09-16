@@ -16,5 +16,3 @@ The website is built with HTML, CSS, and JavaScript, and it uses the Bootstrap f
 - Responsive design for mobile and desktop devices
 
 No special build steps are required. The website is static and can be served from any web server.
-
-The QR code product lookup page previously hosted at `/qr` has moved to its own project: [soutasadmin/battery-label](https://github.com/soutasadmin/battery-label).
